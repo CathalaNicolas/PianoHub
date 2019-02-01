@@ -14,56 +14,85 @@ public enum NoteType
     UNKNOWN
 }
 
-public class Note : MonoBehaviour
+public class Note
 {
-    private float PosX { get; set; }
-    private float PosY { get; set; }
-    private float PosZ { get; set; }
+    public float PosX { get; set; }
+    public float PosY { get; set; }
+    public float PosZ { get; set; }
     private float NoteSpeed { get; set; }
-    private float NoteLength { get; set; }
-    private float SpawnTimer { get; set; }
-    private float Timer { get; set; }
-    private NoteType Type { get; set; }
+    public float NoteDuration { get; set; }
+    public float SpawnTimer { get; set; }
+    public NoteType Type { get; set; }
     private Color NoteColor;
-    private GameObject NoteObject;
-    private readonly Renderer render;
+    public GameObject NoteObject;
 
-    public Note(float PosX, float PosY, float PosZ, NoteType type)
+
+    public Note(NoteType type, float SpawnTimer, float NoteDuration)
     {
+        //Creation du GameObject Note, avec son type primitif (cube), un matériau (pour appliquer une couleur), et une couleur
         NoteColor = new Color(125f, 125f, 125f);
-
         NoteObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        render = NoteObject.GetComponent<Renderer>();
-        render.material = new Material(Shader.Find("Standard"))
-        {
-            color = NoteColor
-        };
-        NoteObject.transform.position.Set(PosX, PosY, PosZ);
-        NoteObject.AddComponent<Fall>();
+        MaterialPropertyBlock props = new MaterialPropertyBlock();
+        props.SetColor("_Color", Color.red);
+        NoteObject.GetComponent<Renderer>().SetPropertyBlock(props);
 
-        this.PosX = PosX;
-        this.PosY = PosY;
-        this.PosZ = PosZ;
-        this.SpawnTimer = (Time.deltaTime % 60);
-        this.Timer = 0f;
-        this.NoteLength = 0.5f;
-        this.NoteSpeed = 1 * this.NoteLength;
+        //On défini les positions de bases, le moment auquel la note apparaît, son speed et son type.
+        this.PosY = 15f;
+        this.PosZ = 1.5f;
+        SetNotePosByType(type);
+        this.SpawnTimer = SpawnTimer;
+        this.NoteDuration = NoteDuration;
+        this.NoteSpeed = 1 * this.NoteDuration;
+        this.Type = type;
+
+        //On défini le scale de l'object (sa taille), puis un vieux tricks pour pas voir la note dès le départ, 
+        NoteObject.transform.localScale= new Vector3(0.2f, NoteDuration, 0.2f);
+        NoteObject.transform.position = new Vector3(-10f, -10f, -10f);
     }
 
     public void SetNoteColor(float r, float g, float b)
     {
-        render.material.color = new Color(r, g, b);
+        NoteObject.GetComponent<Renderer>().material.SetColor("_Color", new Color(r, g, b));
         NoteColor.r = r;
         NoteColor.g = g;
         NoteColor.b = b;
     }
 
-    private void Update()
+    //Placement des Notes en fonction de leurs types, pour coincider avec les sliders.
+    private void SetNotePosByType(NoteType type)
     {
-        this.Timer += Time.deltaTime;
-        if (this.Timer >= SpawnTimer)
+        switch (type)
         {
-            NoteObject.transform.Translate(0, -Time.deltaTime, 0, Space.World);
+            case NoteType.DO:
+                PosX = -3f;
+                break;
+            case NoteType.RE:
+                PosX = -2.5f;
+                break;
+            case NoteType.MI:
+                PosX = -2f;
+                break;
+            case NoteType.FA:
+                PosX = -1.5f;
+                break;
+            case NoteType.SOL:
+                PosX = -1f;
+                break;
+            case NoteType.LA:
+                PosX = -0.5f;
+                break;
+            case NoteType.SI:
+                PosX = 0f;
+                break;
         }
+    }
+    public void MoveNote(float Distance)
+    {
+        NoteObject.transform.position = new Vector3(PosX, PosY - 0.2f, PosZ);
+        PosY -= 0.2f;
+    }
+    public Vector3 GetNotePos()
+    {
+        return (new Vector3(PosX, PosY, PosZ));
     }
 }

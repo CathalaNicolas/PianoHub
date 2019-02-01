@@ -20,7 +20,6 @@ public class Slider : MonoBehaviour
             noteSlider = GameObject.FindGameObjectsWithTag("noteSlider");
             foreach (GameObject slider in noteSlider)
             {
-                //Scale à 0 permet de rendre l'object invisible. Old tricks boys.
                 slider.transform.localScale = new Vector3(0.05F, 10, 0.05F);
             }
             setNoteSliderPosition();
@@ -36,7 +35,6 @@ public class Slider : MonoBehaviour
             {
                 if (noteSlider != null && keyBoardEntries.Contains(vKey.ToString()) == true)
                 {
-                    //Resize le slider pour être visible.
                     noteSlider[(keyBoardEntries.Length - 1) - keyBoardEntries.IndexOf(vKey.ToString())].transform.localScale = new Vector3(scaleX, scaleY, scaleZ);
                 }
             }

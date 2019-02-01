@@ -62,7 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Fall.cs" />
-    <Compile Include="Assets\Scripts\music.cs" />
+    <Compile Include="Assets\Scripts\Music.cs" />
     <Compile Include="Assets\Scripts\Note.cs" />
     <Compile Include="Assets\Scripts\NotesManager.cs" />
     <Compile Include="Assets\Scripts\PlayButton.cs" />

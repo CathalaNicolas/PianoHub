@@ -57,6 +57,7 @@ public class NotesManager : MonoBehaviour
 
             Vector3 pos = transform.TransformPoint(Getpos(cpt));
             Note.transform.localScale = new Vector3(0.2f, Getsize(cpt), 0.2f);
+            print(pos);
             Instantiate(Note, pos, transform.rotation);
             cpt++;
             Debug.Log("Time = " + Time.time);
