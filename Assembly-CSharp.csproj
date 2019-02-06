@@ -63,10 +63,14 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Fall.cs" />
     <Compile Include="Assets\Scripts\Music.cs" />
+    <Compile Include="Assets\Scripts\MusicLoader.cs" />
+    <Compile Include="Assets\Scripts\MusicManager.cs" />
     <Compile Include="Assets\Scripts\Note.cs" />
     <Compile Include="Assets\Scripts\NotesManager.cs" />
+    <Compile Include="Assets\Scripts\OpenMusicTest.cs" />
     <Compile Include="Assets\Scripts\PlayButton.cs" />
     <Compile Include="Assets\Scripts\Slider.cs" />
+    <None Include="Assets\Music.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>E:/unity project/Projet Hub/Projet Hub/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

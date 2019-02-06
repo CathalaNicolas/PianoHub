@@ -22,7 +22,7 @@ public class Slider : MonoBehaviour
             {
                 slider.transform.localScale = new Vector3(0.05F, 10, 0.05F);
             }
-            setNoteSliderPosition();
+            SortNoteSliderPosition();
         }
     }
 
@@ -35,10 +35,12 @@ public class Slider : MonoBehaviour
             {
                 if (noteSlider != null && keyBoardEntries.Contains(vKey.ToString()) == true)
                 {
+                    //Grossisement du slider lors de l'appui de la touche correspondante (keyBoardEntries).
                     noteSlider[(keyBoardEntries.Length - 1) - keyBoardEntries.IndexOf(vKey.ToString())].transform.localScale = new Vector3(scaleX, scaleY, scaleZ);
                 }
             }
         }
+        //Reset de la size du slider après TimeLeft
         timeLeft -= Time.deltaTime;
         if (timeLeft <= 0)
         {
@@ -58,7 +60,8 @@ public class Slider : MonoBehaviour
             return 1;
         return 0;
     }
-    private void setNoteSliderPosition()
+
+    private void SortNoteSliderPosition()
     {
         bool sorted = false;
         GameObject  tmp;

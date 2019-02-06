@@ -35,7 +35,7 @@ public class Note
         MaterialPropertyBlock props = new MaterialPropertyBlock();
         props.SetColor("_Color", Color.red);
         NoteObject.GetComponent<Renderer>().SetPropertyBlock(props);
-
+        
         //On défini les positions de bases, le moment auquel la note apparaît, son speed et son type.
         this.PosY = 15f;
         this.PosZ = 1.5f;
@@ -47,7 +47,7 @@ public class Note
 
         //On défini le scale de l'object (sa taille), puis un vieux tricks pour pas voir la note dès le départ, 
         NoteObject.transform.localScale= new Vector3(0.2f, NoteDuration, 0.2f);
-        NoteObject.transform.position = new Vector3(-10f, -10f, -10f);
+        NoteObject.transform.position = new Vector3(PosX, PosY, PosZ);
     }
 
     public void SetNoteColor(float r, float g, float b)
