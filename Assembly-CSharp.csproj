@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\NotesManager.cs" />
     <Compile Include="Assets\Scripts\OpenMusicTest.cs" />
     <Compile Include="Assets\Scripts\PlayButton.cs" />
+    <Compile Include="Assets\Scripts\playingMusic.cs" />
     <Compile Include="Assets\Scripts\Slider.cs" />
     <None Include="Assets\Music.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">

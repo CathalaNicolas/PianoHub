@@ -48,6 +48,7 @@ public class Note
         //On défini le scale de l'object (sa taille), puis un vieux tricks pour pas voir la note dès le départ, 
         NoteObject.transform.localScale= new Vector3(0.2f, NoteDuration, 0.2f);
         NoteObject.transform.position = new Vector3(PosX, PosY, PosZ);
+        GameObject.DontDestroyOnLoad(NoteObject);
     }
 
     public void SetNoteColor(float r, float g, float b)
@@ -94,5 +95,11 @@ public class Note
     public Vector3 GetNotePos()
     {
         return (new Vector3(PosX, PosY, PosZ));
+    }
+    public string InfoToString()
+    {
+        string result = "Note : PosX(" + PosX + "), posY(" + PosY+ "), posZ(" + PosZ + "), type = " + Type + ", NoteDuration(" + NoteDuration + ")";
+     return (result);
+
     }
 }

@@ -4,33 +4,36 @@ using System.Globalization;
 using System.IO;
 using UnityEngine;
 
-public class MusicLoader
+public class MusicLoader : MonoBehaviour
 {
-    public Music music;
+    public Music music = null;
 
-    public MusicLoader()
+    public void Start()
     {
-        music = UnityEditor.GameObjectUtility.GetComponent(typeof(Music)) as Music;
-        if (music != null)
-            music = Instantiate(music);
-        print("Music created!");
+        music = GameObject.FindWithTag("Music").GetComponent<Music>();
     }
-
+    public void OnDestroy()
+    {
+        print("Destroying MusicLoader");
+    }
     public Music LoadMusicFromPath(string Path)
     {
-
-        print("File exxist ?");
-        if (File.Exists(Path))
+        if (music != null)
         {
-            print("Yes !");
-            using (StreamReader sr = File.OpenText(Path))
+            print("File exxist ?");
+            if (File.Exists(Path))
+            {
+                print("Yes !");
+                using (StreamReader sr = File.OpenText(Path))
                 {
-                LoadMusic(sr);
+                    LoadMusic(sr);
+                }
             }
+            else
+                print("No!");
+            return (music);
         }
-        else
-            print("No!");
-        return (music);
+        return (null);
     }
 
     public void LoadMusic(StreamReader sr)

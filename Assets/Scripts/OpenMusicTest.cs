@@ -7,18 +7,26 @@ using UnityEngine.SceneManagement;
 public class OpenMusicTest : MonoBehaviour
 {
     string path;
-    MusicManager musicManager;
+    public MusicManager musicManager = null;
 
     public void Start()
     {
-        musicManager = this.gameObject.AddComponent(typeof(MusicManager)) as MusicManager;
+        musicManager = GameObject.FindWithTag("MusicManager").GetComponent<MusicManager>();
     }
 
     public void OpenExplorer()
     {
-        path = EditorUtility.OpenFilePanel("Music Loader", "", "txt");
-        musicManager.LoadMusic(path);
-        SceneManager.LoadScene("Game");
+        if (musicManager != null)
+        {
+            print("loading music file");
+            path = EditorUtility.OpenFilePanel("Music Loader", "", "txt");
+            musicManager.LoadMusic(path);
+            SceneManager.LoadScene("Game");
+            SceneManager.UnloadSceneAsync(1);
+            musicManager.PlayMusic(0);
+        }
+        else
+            print("No musicManager attached");
     }
 
 }
