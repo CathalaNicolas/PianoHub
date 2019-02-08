@@ -41,11 +41,11 @@ public class Music : MonoBehaviour
                     //On bouge la note
                     Note.MoveNote(-0.5f);
 
-                    print("Note : " + Note.Type + "Pos: " + Note.GetNotePos());
+                    //print("Note : " + Note.Type + "Pos: " + Note.GetNotePos());
                     //La note passe sous le clavier, on l'ajoute à celles qui faut détruire
                     if (Note.PosY <= 0 - Note.NoteDuration)
                     {
-                        print("DESTRUCTION NOTE");
+                        //print("DESTRUCTION NOTE");
                         Destroy(Note.NoteObject);
                         toRemove.Add(Note);
                     }

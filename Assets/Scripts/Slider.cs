@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Slider : MonoBehaviour
 {
-    private const float scaleX = 0.1F;
-    private const float scaleY = 10;
-    private const float scaleZ = 0.1F;
     private float timeLeft = 0.1F;
+    /*private const float scaleX = 0.1F;
+    private const float scaleY = 10;
+    private const float scaleZ = 0.1F;*/
+
     private const string keyBoardEntries = "ZERTYUIO";
     private GameObject[] noteSlider = null;
     
@@ -29,7 +30,7 @@ public class Slider : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        foreach (KeyCode vKey in System.Enum.GetValues(typeof(KeyCode)))
+        /*foreach (KeyCode vKey in System.Enum.GetValues(typeof(KeyCode)))
         {
             if (Input.GetKey(vKey))
             {
@@ -39,7 +40,7 @@ public class Slider : MonoBehaviour
                     noteSlider[(keyBoardEntries.Length - 1) - keyBoardEntries.IndexOf(vKey.ToString())].transform.localScale = new Vector3(scaleX, scaleY, scaleZ);
                 }
             }
-        }
+        }*/
         //Reset de la size du slider après TimeLeft
         timeLeft -= Time.deltaTime;
         if (timeLeft <= 0)
