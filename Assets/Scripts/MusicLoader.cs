@@ -10,7 +10,12 @@ public class MusicLoader : MonoBehaviour
 
     public void Start()
     {
-        music = GameObject.FindWithTag("Music").GetComponent<Music>();
+        GameObject musicObject = GameObject.FindWithTag("Music");
+        if (musicObject != null)
+        {
+            music = musicObject.GetComponent<Music>();
+        }
+
     }
     public void OnDestroy()
     {
