@@ -8,6 +8,7 @@ TagManager:
   - MusicManager
   - Music
   - MusicLoader
+  - Piano
   layers:
   - Default
   - TransparentFX
