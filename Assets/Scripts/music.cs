@@ -6,18 +6,26 @@ public class Music : MonoBehaviour
 {
     private string MusicName { get; set; }
     private float Duration { get; set; }
-    private List<Note> ListNote = null;
+    public List<Note> ListNote = null;
+    public List<GameObject> instantiatedNote = null;
+    public GameObject notePreFab;
+    public float timePausedStart = 0.0F;
+    public float timePausedEnd = 0.0F;
+    public float timeStart = -1F;
     public bool start = false;
 
     private void Start()
     {
         ListNote = new List<Note>();
         GameObject.DontDestroyOnLoad(this.gameObject);
+        GameObject.DontDestroyOnLoad(notePreFab);
+        print("Music created");
     }
 
     private void OnDestroy()
     {
-        print("Music destroyed");   
+        this.MusicReset();
+        print("Music destroyed");
     }
 
     public void PrintInfo()
@@ -30,30 +38,25 @@ public class Music : MonoBehaviour
     {
         if (start == true)
         {
-            List<Note> toRemove = new List<Note>();
+            if (timeStart == -1)
+                timeStart = Time.time;
 
             foreach (Note Note in ListNote)
             {
-
                 //Condition pour savoir si c'est le moment de faire tomber la note
-                if (Time.time >= Note.SpawnTimer)
+                if ((Time.time - timeStart) >= Note.SpawnTimer + (timePausedEnd - timePausedStart) && Note.active == false)
                 {
-                    //On bouge la note
-                    Note.MoveNote(-0.5f);
-
-                    //print("Note : " + Note.Type + "Pos: " + Note.GetNotePos());
-                    //La note passe sous le clavier, on l'ajoute à celles qui faut détruire
-                    if (Note.PosY <= 0 - Note.NoteDuration)
-                    {
-                        //print("DESTRUCTION NOTE");
-                        Destroy(Note.NoteObject);
-                        toRemove.Add(Note);
-                    }
+                    GameObject _note = Instantiate(notePreFab, Note.GetNotePos(), Quaternion.identity);
+                    instantiatedNote.Add(_note);
+                    GameObject.DontDestroyOnLoad(_note);
+                    Note.active = true;
                 }
-            }
-            foreach (Note Note in toRemove)
-            {
-                ListNote.Remove(Note);
+                //On bouge la note
+                foreach (GameObject NoteObject in instantiatedNote)
+                {
+                    NoteObject.transform.Translate(Vector3.down * 0.05F, Camera.main.transform);
+                    //sNote.MoveNote(NoteObject, -0.2f);
+                }
             }
         }
     }
@@ -66,11 +69,17 @@ public class Music : MonoBehaviour
         ListNote.Add(newNote);
     }
 
-    public void SetGameObjectMusic(Music music)
+    public void MusicReset()
     {
-        print("SetGameobjectMusic !!!");
-        this.MusicName = music.MusicName;
-        this.Duration = music.Duration;
-        this.ListNote = music.ListNote;
+        foreach (GameObject note in instantiatedNote)
+            Destroy(note);
+        foreach (Note note in ListNote)
+            note.active = false;
+        start = false;
+        instantiatedNote = new List<GameObject>();
+        timePausedStart = 0.0F;
+        timePausedEnd = 0.0F;
+        timeStart = -1F;
+        print("Music Reset !");
     }
 }

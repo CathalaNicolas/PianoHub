@@ -10,6 +10,7 @@ public class MusicLoader : MonoBehaviour
 
     public void Start()
     {
+   
         GameObject musicObject = GameObject.FindWithTag("Music");
         if (musicObject != null)
         {
@@ -25,17 +26,13 @@ public class MusicLoader : MonoBehaviour
     {
         if (music != null)
         {
-            print("File exxist ?");
             if (File.Exists(Path))
             {
-                print("Yes !");
                 using (StreamReader sr = File.OpenText(Path))
                 {
                     LoadMusic(sr);
                 }
             }
-            else
-                print("No!");
             return (music);
         }
         return (null);
@@ -62,7 +59,6 @@ public class MusicLoader : MonoBehaviour
                 return;
             SpawnTime = float.Parse(parts[1], CultureInfo.InvariantCulture.NumberFormat);
             duration = float.Parse(parts[2], CultureInfo.InvariantCulture.NumberFormat);
-            print("Type: " + type + " SpawnTime " + SpawnTime + " Duration" + duration);
             music.AddNote(type, SpawnTime, duration);
         }
         return;

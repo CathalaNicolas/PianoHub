@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 public class MusicManager : MonoBehaviour
 {
      public MusicLoader Loader = null;
-     public List<Music> listMusic = null;
+     public List<Music> listMusic = new List<Music>();
      private int nbMusic = 0;
-    Scene               currentScene;
+    private  int playingMusic = -1;
+
+     Scene  currentScene;
 
     public void Start()
     {
@@ -26,13 +28,7 @@ public class MusicManager : MonoBehaviour
     {
         print("Destroying MusicManager");
     }
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            print("Don't DIE MusicManager !");
-        }
-    }
+
     public void LoadMusic(string Path)
     {
         if (Loader != null)
@@ -59,9 +55,24 @@ public class MusicManager : MonoBehaviour
         {
             print("Found music starting it...");
             listMusic[nb].start = true;
-            listMusic[nb].PrintInfo();
+            playingMusic = nb;
         }
     }
+
+    public  Music getMusic(int nb)
+    {
+        if (nb <= nbMusic)
+        {
+            return (listMusic[nb]);
+        }
+        return (null);
+    }
+ 
+    public  int PlayingMusic()
+    {
+        return (playingMusic);
+    }
+
     public void UnloadMusic(Music music)
     {
         listMusic.Remove(music);

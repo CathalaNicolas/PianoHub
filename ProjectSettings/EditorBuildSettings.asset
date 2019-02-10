@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OpenMusic.unity
     guid: 04acb241902830a4da506103a54c3df9
+  - enabled: 1
+    path: Assets/Scenes/InGameMenu.unity
+    guid: 48ed7d01299894347b4029fecc9b8dc0
   m_configObjects: {}

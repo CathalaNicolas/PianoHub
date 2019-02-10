@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class KeyManager : MonoBehaviour
 {
@@ -9,41 +10,78 @@ public class KeyManager : MonoBehaviour
     private const float scaleZ = 0.1F;
     private GameObject[] noteSlider = null;
     private const string keyBoardEntries = "ZERTYUIO";
-    
-
+    private List<KeyCode> keys = null;
+    public MusicManager musicManager = null;
+    private Music music = null;
     // Start is called before the first frame update
     void Start()
     {
-        print("AH OUUIIIIIIIIIIIII");
+        musicManager = GameObject.FindObjectOfType<MusicManager>();
         noteSlider = GameObject.FindGameObjectsWithTag("noteSlider");
-        if (noteSlider == null)
-            print("NONNNNNN");
+        if (musicManager != null)
+            music = musicManager.getMusic(musicManager.PlayingMusic());
+        if (noteSlider == null || music == null)
+        {
+            print("Can't init sliders, bailing...");
+            return;
+        }
+        keys = new List<KeyCode>();
+       
+        InitKeys();
         SortNoteSliderPosition();
+    }
+
+    public void InitKeys()
+    {
+        for (int i = 0; i < keyBoardEntries.Length; i++)
+        {
+            KeyCode val = (KeyCode)System.Enum.Parse(typeof(KeyCode), keyBoardEntries[i].ToString());
+            keys.Add(val);
+        }
+        keys.Add(KeyCode.Escape);
     }
 
     private void OnDestroy()
     {
-        print("CACACAC");
     }
     // Update is called once per frame
     public void Update()
     {
-        foreach (KeyCode vKey in System.Enum.GetValues(typeof(KeyCode)))
+        foreach (KeyCode vKey in keys)
         {
-            if (Input.GetKey(vKey)) {
-                print("WEAEAAEAEEA");
-                if (noteSlider != null && keyBoardEntries.Contains(vKey.ToString()) == true)
+            if (Input.GetKey(vKey))
+            {
+                //Recuperation de l'indice du slider
+                int idx = (keyBoardEntries.Length - 1) - keyBoardEntries.IndexOf(vKey.ToString());
+                if (idx >= 0 && idx < keyBoardEntries.Length)
                 {
-                    int idx = (keyBoardEntries.Length - 1) - keyBoardEntries.IndexOf(vKey.ToString());
-                    //Grossisement du slider lors de l'appui de la touche correspondante (keyBoardEntries).
-                    noteSlider[idx].transform.localScale = new Vector3(scaleX, scaleY, scaleZ);
                     //Recuperation de l'AudioSource du slider
                     AudioSource audioData = noteSlider[idx].GetComponent<AudioSource>();
-                    //Lancement de l'AudioClip
-                    audioData.Play(0);
+
+
+                    //Grossisement du slider lors de l'appui de la touche correspondante (keyBoardEntries).
+                    noteSlider[idx].transform.localScale = new Vector3(scaleX, scaleY, scaleZ);
+                    //Lancement de l'AudioClip si il n'est pasd déja joué
+                    if (audioData.isPlaying != true)
+                        audioData.Play(0);
+                   if (Input.GetKeyUp(vKey) && audioData.isPlaying)
+                        audioData.Stop();
+                }
+                else if (vKey == KeyCode.Escape)
+                {
+                    loadGameMenu();
                 }
             }
         }
+    }
+
+    public void loadGameMenu()
+    {
+        music.timePausedStart = Time.time;
+        print("loading menu....");
+        music.start = false;
+        SceneManager.LoadSceneAsync(2);
+        
     }
 
     private int compareNoteSlider(GameObject slider, GameObject slider2)
