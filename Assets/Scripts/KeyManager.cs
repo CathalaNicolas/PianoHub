@@ -49,21 +49,30 @@ public class KeyManager : MonoBehaviour
     {
         foreach (KeyCode vKey in keys)
         {
-            if (Input.GetKey(vKey)) {
-                if (noteSlider != null && keyBoardEntries.Contains(vKey.ToString()) == true)
+            //Recuperation de l'indice du slider
+            int idx = (keyBoardEntries.Length - 1) - keyBoardEntries.IndexOf(vKey.ToString());
+            if (idx >= 0 && idx < keyBoardEntries.Length)
+            {
+                //Recuperation de l'AudioSource du slider
+                AudioSource audioData = noteSlider[idx].GetComponent<AudioSource>();
+
+                if (Input.GetKey(vKey))
                 {
-                    int idx = (keyBoardEntries.Length - 1) - keyBoardEntries.IndexOf(vKey.ToString());
-                    //Grossisement du slider lors de l'appui de la touche correspondante (keyBoardEntries).
-                    noteSlider[idx].transform.localScale = new Vector3(scaleX, scaleY, scaleZ);
-                    //Recuperation de l'AudioSource du slider
-                    AudioSource audioData = noteSlider[idx].GetComponent<AudioSource>();
-                    //Lancement de l'AudioClip
-                    audioData.Play(0);
+                    if (noteSlider != null && keyBoardEntries.Contains(vKey.ToString()) == true)
+                    {
+                        //Grossisement du slider lors de l'appui de la touche correspondante (keyBoardEntries).
+                        noteSlider[idx].transform.localScale = new Vector3(scaleX, scaleY, scaleZ);
+                        //Lancement de l'AudioClip si il n'est pasd déja joué
+                        if (audioData.isPlaying != true)
+                            audioData.Play(0);
+                    }
                 }
                 else if (vKey == KeyCode.Escape)
                 {
                     loadGameMenu();
                 }
+                if (Input.GetKeyUp(vKey) && audioData.isPlaying)
+                    audioData.Stop();
             }
         }
     }
