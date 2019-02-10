@@ -22,7 +22,6 @@ public class OpenMusicTest : MonoBehaviour
             path = EditorUtility.OpenFilePanel("Music Loader", "", "txt");
             musicManager.LoadMusic(path);
             SceneManager.LoadScene("Game");
-            SceneManager.UnloadSceneAsync(1);
             musicManager.PlayMusic(0);
         }
         else

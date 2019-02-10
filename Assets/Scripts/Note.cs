@@ -24,18 +24,11 @@ public class Note
     public float SpawnTimer { get; set; }
     public NoteType Type { get; set; }
     private Color NoteColor;
-    public GameObject NoteObject;
-
+    public bool active = false;
 
     public Note(NoteType type, float SpawnTimer, float NoteDuration)
     {
-        //Creation du GameObject Note, avec son type primitif (cube), un matériau (pour appliquer une couleur), et une couleur
-        NoteColor = new Color(125f, 125f, 125f);
-        NoteObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        MaterialPropertyBlock props = new MaterialPropertyBlock();
-        props.SetColor("_Color", Color.red);
-        NoteObject.GetComponent<Renderer>().SetPropertyBlock(props);
-        
+
         //On défini les positions de bases, le moment auquel la note apparaît, son speed et son type.
         this.PosY = 15f;
         this.PosZ = 1.5f;
@@ -44,14 +37,9 @@ public class Note
         this.NoteDuration = NoteDuration;
         this.NoteSpeed = 1 * this.NoteDuration;
         this.Type = type;
-
-        //On défini le scale de l'object (sa taille), puis un vieux tricks pour pas voir la note dès le départ, 
-        NoteObject.transform.localScale= new Vector3(0.2f, NoteDuration, 0.2f);
-        NoteObject.transform.position = new Vector3(PosX, PosY, PosZ);
-        GameObject.DontDestroyOnLoad(NoteObject);
     }
 
-    public void SetNoteColor(float r, float g, float b)
+    public void SetNoteColor(GameObject NoteObject, float r, float g, float b)
     {
         NoteObject.GetComponent<Renderer>().material.SetColor("_Color", new Color(r, g, b));
         NoteColor.r = r;
@@ -87,10 +75,15 @@ public class Note
                 break;
         }
     }
-    public void MoveNote(float Distance)
+    public Transform setTransform(GameObject note)
     {
-        NoteObject.transform.position = new Vector3(PosX, PosY - 0.2f, PosZ);
-        PosY -= 0.2f;
+        note.transform.position = new Vector3(PosX, PosY, PosZ);
+        return (note.transform);
+    }
+    public void MoveNote(GameObject NoteObject, float Distance)
+    {
+        NoteObject.transform.position = new Vector3(PosX, PosY - Distance, PosZ);
+        PosY -= Distance;
     }
     public Vector3 GetNotePos()
     {
