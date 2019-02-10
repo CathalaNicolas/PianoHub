@@ -18,9 +18,11 @@ public class PianoHitBox : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        print("Got collision is note?");
         //Verifie si le gameObject rentré en collision avec la PianoHitBox est une note
-        if (collision.gameObject.name == "PianoNote")
+        if (collision.gameObject.tag == "Note")
         {
+            print("Yes it is note");
             //Recuperation du Renderer pour pouvoir modifier la couleur du Material associé
             Renderer rend = collision.gameObject.GetComponent<Renderer>();
             rend.material.SetColor("_Color", Color.green);
