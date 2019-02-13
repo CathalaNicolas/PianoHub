@@ -28,7 +28,7 @@ public class KeyManager : MonoBehaviour
         keys = new List<KeyCode>();
        
         InitKeys();
-        SortNoteSliderPosition();
+       // SortNoteSliderPosition();
     }
 
     public void InitKeys()

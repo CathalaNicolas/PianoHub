@@ -54,16 +54,17 @@ public class Music : MonoBehaviour
                 //On bouge la note
                 foreach (GameObject NoteObject in instantiatedNote)
                 {
-                    NoteObject.transform.Translate(Vector3.down * 0.05F, Camera.main.transform);
-                    //sNote.MoveNote(NoteObject, -0.2f);
+                    //NoteObject.transform.Translate(new Vector3(0, 0, -1 * (Time.deltaTime * 0.01F)), Camera.main.transform);
+
+                    NoteObject.transform.position= new Vector3(NoteObject.transform.position.x, NoteObject.transform.position.y, NoteObject.transform.position.z -1 * (Time.deltaTime * 0.01F));
                 }
             }
         }
     }
 
-    public void AddNote(NoteType type, float SpawnTimer, float NoteDuration)
+    public void AddNote(int index, float SpawnTimer, float NoteDuration)
     {
-        Note newNote = new Note(type, SpawnTimer, NoteDuration);
+        Note newNote = new Note(index, SpawnTimer, NoteDuration);
 
         print("Adding Note !");
         ListNote.Add(newNote);

@@ -12,14 +12,14 @@ public class Slider : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        if (noteSlider == null)
+       /* if (noteSlider == null)
         {
             noteSlider = GameObject.FindGameObjectsWithTag("noteSlider");
             foreach (GameObject slider in noteSlider)
             {
                 slider.transform.localScale = new Vector3(0.05F, 10, 0.05F);
             }
-        }
+        }*/
     }
 
     // Update is called once per frame
@@ -27,14 +27,14 @@ public class Slider : MonoBehaviour
     {
         //Reset de la size du slider après TimeLeft
         timeLeft -= Time.deltaTime;
-        if (timeLeft <= 0)
+        /*if (timeLeft <= 0)
         {
             foreach (GameObject slider in noteSlider)
             {
                 slider.transform.localScale = new Vector3(0.05F, 10, 0.05F);
             }
             timeLeft = 0.1F;
-        }
+        }*/
     }
 
 }

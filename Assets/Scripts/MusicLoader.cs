@@ -59,7 +59,7 @@ public class MusicLoader : MonoBehaviour
                 return;
             SpawnTime = float.Parse(parts[1], CultureInfo.InvariantCulture.NumberFormat);
             duration = float.Parse(parts[2], CultureInfo.InvariantCulture.NumberFormat);
-            music.AddNote(type, SpawnTime, duration);
+          //  music.AddNote(type, SpawnTime, duration);
         }
         return;
     }

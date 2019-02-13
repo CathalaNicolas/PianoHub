@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MusicManager : MonoBehaviour
 {
-     public MusicLoader Loader = null;
+     public MusicLoader Loader;
      public List<Music> listMusic = new List<Music>();
      private int nbMusic = 0;
     private  int playingMusic = -1;
@@ -14,12 +14,11 @@ public class MusicManager : MonoBehaviour
 
     public void Start()
     {
-        currentScene = SceneManager.GetActiveScene();
-
+/*
         if (currentScene.name == "OpenMusic")
         {
             Loader = GameObject.FindWithTag("MusicLoader").GetComponent<MusicLoader>();
-        }
+        }*/
         Debug.Log("public manager started !");
         GameObject.DontDestroyOnLoad(this.gameObject);
     }
@@ -47,11 +46,15 @@ public class MusicManager : MonoBehaviour
         else
             Debug.Log("Loader not attached");
     }
+    public void addMusic(Music music)
+    {
+        listMusic.Add(music);
+    }
 
     public void PlayMusic(int nb)
     {
 
-        if (nb <= nbMusic)
+        if (nb <= nbMusic && nb >= 0)
         {
             print("Found music starting it...");
             listMusic[nb].start = true;
@@ -61,7 +64,7 @@ public class MusicManager : MonoBehaviour
 
     public  Music getMusic(int nb)
     {
-        if (nb <= nbMusic)
+        if (nb <= nbMusic && nb >= 0)
         {
             return (listMusic[nb]);
         }
@@ -76,5 +79,14 @@ public class MusicManager : MonoBehaviour
     public void UnloadMusic(Music music)
     {
         listMusic.Remove(music);
+    }
+
+    public void Update()
+    {
+        currentScene = SceneManager.GetActiveScene();
+        if (currentScene.name == "Game")
+        {
+            PlayMusic(0);
+        }
     }
 }

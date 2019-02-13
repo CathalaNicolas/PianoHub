@@ -20,6 +20,6 @@ public class ButtonRestart : MonoBehaviour
         print("Unloading menu, restarting game...");
         music.MusicReset();
         music.start = true;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Game");
     }
 }

@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 8598e274145a32347a26c80f244fa6ce
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - loader: {fileID: 2889410180326095447, guid: ae63264e101113942a6ff76c54689729,
+      type: 3}
+  - musicManager: {fileID: 988143606651009658, guid: cf21a69e496faa640ba4c2a2e37dc024,
+      type: 3}
+  - keyManager: {fileID: 8566334002195979143, guid: 13da90bfd9653c743b112b5cf51f09cd,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

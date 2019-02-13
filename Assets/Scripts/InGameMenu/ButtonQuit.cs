@@ -19,6 +19,6 @@ public class ButtonQuit : MonoBehaviour
     {
         print("Unloading menu, quitting game...");
         music.MusicReset();
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Menu");
     }
 }

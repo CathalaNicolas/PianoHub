@@ -18,11 +18,10 @@ public class OpenMusicTest : MonoBehaviour
     {
         if (musicManager != null)
         {
-            print("loading music file");
-            path = EditorUtility.OpenFilePanel("Music Loader", "", "txt");
-            musicManager.LoadMusic(path);
-            SceneManager.LoadScene("Game");
-            musicManager.PlayMusic(0);
+            /* print("loading music file");
+             path = EditorUtility.OpenFilePanel("Music Loader", "", "txt");
+             musicManager.LoadMusic(path);
+             SceneManager.LoadScene("Game");*/
         }
         else
             print("No musicManager attached");
