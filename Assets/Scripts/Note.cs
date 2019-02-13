@@ -23,20 +23,26 @@ public class Note
     public float NoteDuration { get; set; }
     public float SpawnTimer { get; set; }
     public NoteType Type { get; set; }
+    public int index;
     private Color NoteColor;
     public bool active = false;
 
-    public Note(NoteType type, float SpawnTimer, float NoteDuration)
+    public Note(int index, float SpawnTimer, float NoteDuration)
     {
+        Debug.Log("ici");
+        GameObject[] sliders = GameObject.FindGameObjectsWithTag("noteSlider");
 
+        if (sliders.Length != 52 || index > sliders.Length)
+        {
+            Debug.Log("Can't find sliders to set note position, note not created.");
+            return;
+        }
         //On défini les positions de bases, le moment auquel la note apparaît, son speed et son type.
-        this.PosY = 15f;
-        this.PosZ = 1.5f;
-        SetNotePosByType(type);
+        SetNotePosByType(index, sliders[index]);
         this.SpawnTimer = SpawnTimer;
         this.NoteDuration = NoteDuration;
         this.NoteSpeed = 1 * this.NoteDuration;
-        this.Type = type;
+        this.index = index;
     }
 
     public void SetNoteColor(GameObject NoteObject, float r, float g, float b)
@@ -48,43 +54,14 @@ public class Note
     }
 
     //Placement des Notes en fonction de leurs types, pour coincider avec les sliders.
-    private void SetNotePosByType(NoteType type)
+    private void SetNotePosByType(int index, GameObject slider)
     {
-        switch (type)
-        {
-            case NoteType.DO:
-                PosX = -3f;
-                break;
-            case NoteType.RE:
-                PosX = -2.5f;
-                break;
-            case NoteType.MI:
-                PosX = -2f;
-                break;
-            case NoteType.FA:
-                PosX = -1.5f;
-                break;
-            case NoteType.SOL:
-                PosX = -1f;
-                break;
-            case NoteType.LA:
-                PosX = -0.5f;
-                break;
-            case NoteType.SI:
-                PosX = 0f;
-                break;
-        }
+        PosX = slider.transform.position.x;
+        PosY = slider.transform.position.y;
+        PosZ = slider.transform.position.z + (slider.transform.localScale.z /2);
+        Debug.Log(InfoToString());
     }
-    public Transform setTransform(GameObject note)
-    {
-        note.transform.position = new Vector3(PosX, PosY, PosZ);
-        return (note.transform);
-    }
-    public void MoveNote(GameObject NoteObject, float Distance)
-    {
-        NoteObject.transform.position = new Vector3(PosX, PosY - Distance, PosZ);
-        PosY -= Distance;
-    }
+
     public Vector3 GetNotePos()
     {
         return (new Vector3(PosX, PosY, PosZ));

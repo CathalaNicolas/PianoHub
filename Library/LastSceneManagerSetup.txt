@@ -5,9 +5,12 @@ sceneSetups:
 - path: Assets/Scenes/InGameMenu.unity
   isLoaded: 0
   isActive: 0
-- path: Assets/Scenes/OpenMusic.unity
+- path: Assets/Scenes/Menu.unity
   isLoaded: 0
   isActive: 0
 - path: Assets/Scenes/placingPiano.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/Scenes/Introduction.unity
   isLoaded: 1
   isActive: 1

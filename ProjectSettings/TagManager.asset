@@ -10,6 +10,7 @@ TagManager:
   - MusicLoader
   - Piano
   - Note
+  - GameManager
   layers:
   - Default
   - TransparentFX

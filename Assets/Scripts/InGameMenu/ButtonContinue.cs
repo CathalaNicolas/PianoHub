@@ -22,6 +22,6 @@ public class ButtonContinue : MonoBehaviour
 
         music.timePausedEnd = Time.time;
         music.start = true;
-        SceneManager.LoadSceneAsync(0);
+        SceneManager.LoadSceneAsync("Game");
     }
 }
