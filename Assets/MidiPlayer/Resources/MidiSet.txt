@@ -65,5 +65,6 @@
     <string>To Make the End of Battle</string>
     <string>deb_clai_format0</string>
     <string>auclair_pno</string>
+    <string>chopin_prelude_28_4</string>
   </MidiFiles>
 </MidiSet>

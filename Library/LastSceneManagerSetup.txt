@@ -1,6 +1,6 @@
 sceneSetups:
 - path: Assets/Scenes/Game.unity
-  isLoaded: 1
+  isLoaded: 0
   isActive: 0
 - path: Assets/Scenes/InGameMenu.unity
   isLoaded: 0
@@ -14,6 +14,3 @@ sceneSetups:
 - path: Assets/Scenes/Introduction.unity
   isLoaded: 1
   isActive: 1
-- path: Assets/MidiPlayer/Scenes For Demo/Demo CatchMusic/CatchMusic.unity
-  isLoaded: 0
-  isActive: 0
