@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 179944262601672264}
+  - component: {fileID: 7581586100819152748}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -30,3 +31,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7581586100819152748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2594345945275942021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8598e274145a32347a26c80f244fa6ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loader: {fileID: 2889410180326095447, guid: ae63264e101113942a6ff76c54689729, type: 3}
+  musicManager: {fileID: 988143606651009658, guid: cf21a69e496faa640ba4c2a2e37dc024,
+    type: 3}
+  preFabSlider: {fileID: 0}
+  Piano: {fileID: 0}
+  collisionBar: {fileID: 0}
+  sliders: []

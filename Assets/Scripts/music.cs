@@ -51,14 +51,18 @@ public class Music : MonoBehaviour
                     GameObject.DontDestroyOnLoad(_note);
                     Note.active = true;
                 }
-                //On bouge la note
-                foreach (GameObject NoteObject in instantiatedNote)
-                {
-                    //NoteObject.transform.Translate(new Vector3(0, 0, -1 * (Time.deltaTime * 0.01F)), Camera.main.transform);
-
-                    NoteObject.transform.position= new Vector3(NoteObject.transform.position.x, NoteObject.transform.position.y, NoteObject.transform.position.z -1 * (Time.deltaTime * 0.01F));
-                }
+           
             }
+        }
+    }
+    private void FixedUpdate()
+    {
+        //On bouge la note
+        foreach (GameObject NoteObject in instantiatedNote)
+        {
+            //NoteObject.transform.Translate(new Vector3(0, 0, -1 * (Time.deltaTime * 0.01F)), Camera.main.transform);
+            float translation = Time.fixedDeltaTime;
+            NoteObject.transform.position = new Vector3(NoteObject.transform.position.x, NoteObject.transform.position.y, NoteObject.transform.position.z - 1 * (Time.deltaTime * 0.01F));
         }
     }
 
