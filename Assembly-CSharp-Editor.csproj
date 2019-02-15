@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{486531E5-DA5F-E9F1-E642-BAC354CBB7E9}</ProjectGuid>
+    <ProjectGuid>{A1EE66C3-D50C-9DBE-CBA1-5932A4BACD56}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -139,26 +139,44 @@
     <Compile Include="Assets\HoloToolkit\UX\Scripts\Collections\Editor\CollectionEditor.cs" />
     <Compile Include="Assets\HoloToolkit\UX\Scripts\Editor\CompoundButtonSaveInterceptor.cs" />
     <Compile Include="Assets\HoloToolkit\UX\Scripts\Editor\KeyboardInputFieldEditor.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\Editor\AboutMPTK.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\Editor\FilePlayerEditor.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\Editor\GetVersionPro.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\Editor\MenuSelectMidi.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\Editor\MenuShortcut.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\Editor\MessagesEditor.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\Editor\MidiFileSetupWindow.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\Editor\PatchOptim.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\Editor\Scripts For Demo\UtEditor\CadenceEditor.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\Editor\Scripts For Demo\UtEditor\InfinityMusicEditor.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\Editor\Scripts For Demo\UtEditor\MathMotifEditor.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\Editor\Scripts For Demo\UtEditor\ModifierEditor.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\Editor\Scripts For Demo\UtEditor\UtToolsEditor.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\Editor\SoundFontSetupWindow.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\Editor\StreamPlayerEditor.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\Editor\TextArea.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\Editor\ToolsEditor.cs" />
+    <Compile Include="Assets\MidiPlayer\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>E:/unity project/PianoHub/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>E:/unity project/Projet Hub/Projet Hub/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>E:/unity project/PianoHub/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>E:/unity project/Projet Hub/Projet Hub/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>E:/unity project/PianoHub/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>E:/unity project/Projet Hub/Projet Hub/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.WindowsMR.Editor">
-      <HintPath>E:/unity project/PianoHub/Library/ScriptAssemblies/Unity.XR.WindowsMR.Editor.dll</HintPath>
+      <HintPath>E:/unity project/Projet Hub/Projet Hub/Library/ScriptAssemblies/Unity.XR.WindowsMR.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>E:/unity project/PianoHub/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>E:/unity project/Projet Hub/Projet Hub/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>E:/unity project/PianoHub/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>E:/unity project/Projet Hub/Projet Hub/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.WindowsMR">
-      <HintPath>E:/unity project/PianoHub/Library/ScriptAssemblies/Unity.XR.WindowsMR.dll</HintPath>
+      <HintPath>E:/unity project/Projet Hub/Projet Hub/Library/ScriptAssemblies/Unity.XR.WindowsMR.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/MetroSupport/Tools/UnityEngine.AIModule.dll</HintPath>
@@ -395,31 +413,31 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="GLTFSerialization">
-      <HintPath>E:/unity project/PianoHub/Assets/HoloToolkit/Utilities/Scripts/GLTF/Plugins/GLTFSerialization/GLTFSerialization.dll</HintPath>
+      <HintPath>E:/unity project/Projet Hub/Projet Hub/Assets/HoloToolkit/Utilities/Scripts/GLTF/Plugins/GLTFSerialization/GLTFSerialization.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>E:/unity project/PianoHub/Assets/HoloToolkit/Utilities/Scripts/GLTF/Plugins/JsonNet/Newtonsoft.Json.dll</HintPath>
+      <HintPath>E:/unity project/Projet Hub/Projet Hub/Assets/HoloToolkit/Utilities/Scripts/GLTF/Plugins/JsonNet/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
-      <HintPath>E:/unity project/PianoHub/Library/PackageCache/com.unity.ads@2.3.1/Editor/UnityEditor.Advertisements.dll</HintPath>
+      <HintPath>E:/unity project/Projet Hub/Projet Hub/Library/PackageCache/com.unity.ads@2.3.1/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Advertisements">
-      <HintPath>E:/unity project/PianoHub/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.dll</HintPath>
+      <HintPath>E:/unity project/Projet Hub/Projet Hub/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Advertisements.Editor">
-      <HintPath>E:/unity project/PianoHub/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.Editor.dll</HintPath>
+      <HintPath>E:/unity project/Projet Hub/Projet Hub/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>E:/unity project/PianoHub/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>E:/unity project/Projet Hub/Projet Hub/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>E:/unity project/PianoHub/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>E:/unity project/Projet Hub/Projet Hub/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>E:/unity project/PianoHub/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>E:/unity project/Projet Hub/Projet Hub/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Purchasing">
-      <HintPath>E:/unity project/PianoHub/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
+      <HintPath>E:/unity project/Projet Hub/Projet Hub/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/mscorlib.dll</HintPath>
@@ -451,7 +469,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{DEE86A53-AAC3-71AB-B7C4-D7AF030E878B}</Project>
+      <Project>{DE23E1E3-9D3B-92F3-1A6F-C9C0934EF026}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
   </ItemGroup>

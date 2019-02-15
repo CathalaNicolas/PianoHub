@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{DEE86A53-AAC3-71AB-B7C4-D7AF030E878B}</ProjectGuid>
+    <ProjectGuid>{DE23E1E3-9D3B-92F3-1A6F-C9C0934EF026}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -573,6 +573,77 @@
     <Compile Include="Assets\HoloToolkit\UX\Scripts\UICollection.cs" />
     <Compile Include="Assets\HoloToolkit\UX\Scripts\UsabilityScaler.cs" />
     <Compile Include="Assets\HoloToolkit\UX\Scripts\UsabilityUtilities.cs" />
+    <Compile Include="Assets\MidiPlayer\Scenes For Demo\Demo CatchMusic\Script\Collide.cs" />
+    <Compile Include="Assets\MidiPlayer\Scenes For Demo\Demo CatchMusic\Script\MusicView.cs" />
+    <Compile Include="Assets\MidiPlayer\Scenes For Demo\Demo CatchMusic\Script\NoteView.cs" />
+    <Compile Include="Assets\MidiPlayer\Scenes For Demo\Demo InfinityMusic\Script\Cadence.cs" />
+    <Compile Include="Assets\MidiPlayer\Scenes For Demo\Demo InfinityMusic\Script\InfinityMusic.cs" />
+    <Compile Include="Assets\MidiPlayer\Scenes For Demo\Demo InfinityMusic\Script\MathMotifNote.cs" />
+    <Compile Include="Assets\MidiPlayer\Scenes For Demo\Demo InfinityMusic\Script\SaveLoad.cs" />
+    <Compile Include="Assets\MidiPlayer\Scenes For Demo\Demo InfinityMusic\Script\ScaleDefinition.cs" />
+    <Compile Include="Assets\MidiPlayer\Scenes For Demo\Demo InfinityMusic\Script\UtCadence.cs" />
+    <Compile Include="Assets\MidiPlayer\Scenes For Demo\Demo InfinityMusic\Script\UtComponent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scenes For Demo\Demo InfinityMusic\Script\UtMathMotif.cs" />
+    <Compile Include="Assets\MidiPlayer\Scenes For Demo\Demo InfinityMusic\Script\UtModifier.cs" />
+    <Compile Include="Assets\MidiPlayer\Scenes For Demo\Others Demos\Script\CustomStyle.cs" />
+    <Compile Include="Assets\MidiPlayer\Scenes For Demo\Others Demos\Script\FlyingCamera.cs" />
+    <Compile Include="Assets\MidiPlayer\Scenes For Demo\Others Demos\Script\FlythroughCameraController.cs" />
+    <Compile Include="Assets\MidiPlayer\Scenes For Demo\Others Demos\Script\GoMainMenu.cs" />
+    <Compile Include="Assets\MidiPlayer\Scenes For Demo\Others Demos\Script\GUISelectSoundFont.cs" />
+    <Compile Include="Assets\MidiPlayer\Scenes For Demo\Others Demos\Script\HelperNote.cs" />
+    <Compile Include="Assets\MidiPlayer\Scenes For Demo\Others Demos\Script\iTween.cs" />
+    <Compile Include="Assets\MidiPlayer\Scenes For Demo\Others Demos\Script\LookPoint.cs" />
+    <Compile Include="Assets\MidiPlayer\Scenes For Demo\Others Demos\Script\LookTarget.cs" />
+    <Compile Include="Assets\MidiPlayer\Scenes For Demo\Others Demos\Script\MovePoint.cs" />
+    <Compile Include="Assets\MidiPlayer\Scenes For Demo\Others Demos\Script\SceneHandler.cs" />
+    <Compile Include="Assets\MidiPlayer\Scenes For Demo\Others Demos\Script\TestMidiFilePlayerScripting.cs" />
+    <Compile Include="Assets\MidiPlayer\Scenes For Demo\Others Demos\Script\TestMidiStream.cs" />
+    <Compile Include="Assets\MidiPlayer\Scenes For Demo\TestEffects\CustomFilterNoisy.cs" />
+    <Compile Include="Assets\MidiPlayer\Scenes For Demo\TestEffects\CustomFilterSin.cs" />
+    <Compile Include="Assets\MidiPlayer\Scenes For Demo\TestEffects\CustomFilterWhite.cs" />
+    <Compile Include="Assets\MidiPlayer\Scenes For Demo\TestEffects\TestEffect.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKGameObject\MidiFilePlayer.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKGameObject\MidiPlayer.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKGameObject\MidiPlayerGlobal.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKGameObject\MidiStreamPlayer.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKGameObject\MPTKNote.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKMidi\MidiLoad.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKMidi\MidiNote.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKMidi\MidiScan.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKMidi\MidiSet.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKSoundFont\ImSoundFont.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKUtil\BuilderInfo.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKUtil\DicAudioClip.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKUtil\HelperNote.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKUtil\PopupSelectPatch.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\ChannelAfterTouchEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\ControlChangeEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\KeySignatureEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\MergeSort.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\MetaEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\MetaEventType.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\MidiCommandCode.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\MidiController.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\MidiEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\MidiEventCollection.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\MidiEventComparer.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\MidiFile.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\MidiInMessageEventArgs.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\MidiMessage.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\NoteEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\NoteOnEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\PatchChangeEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\PitchWheelChangeEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\RawMetaEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\SequencerSpecificEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\SmpteOffsetEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\SysexEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\TempoEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\TextEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\TimeSignatureEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\TrackSequenceNumberEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Utils\ByteEncoding.cs" />
+    <Compile Include="Assets\MidiPlayer\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\InGameMenu\ButtonContinue.cs" />
     <Compile Include="Assets\Scripts\InGameMenu\ButtonQuit.cs" />
@@ -582,13 +653,17 @@
     <Compile Include="Assets\Scripts\KeyManager.cs" />
     <Compile Include="Assets\Scripts\Menu\ButtonMenuPlay.cs" />
     <Compile Include="Assets\Scripts\Menu\ButtonMenuQuit.cs" />
+    <Compile Include="Assets\Scripts\MNote.cs" />
     <Compile Include="Assets\Scripts\Music.cs" />
     <Compile Include="Assets\Scripts\MusicLoader.cs" />
     <Compile Include="Assets\Scripts\MusicManager.cs" />
+    <Compile Include="Assets\Scripts\MusicView.cs" />
     <Compile Include="Assets\Scripts\Note.cs" />
     <Compile Include="Assets\Scripts\OpenMusicTest.cs" />
     <Compile Include="Assets\Scripts\PianoHitBox.cs" />
+    <Compile Include="Assets\Scripts\PianoLoad.cs" />
     <Compile Include="Assets\Scripts\PlacingPiano\ButtonStart.cs" />
+    <Compile Include="Assets\Scripts\PlacingPiano\PianoCatchNote.cs" />
     <Compile Include="Assets\Scripts\PlayButton.cs" />
     <Compile Include="Assets\Scripts\Slider.cs" />
     <None Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Shaders\GLTFConstant.cginc" />
@@ -597,11 +672,16 @@
     <None Include="Assets\HoloToolkit\SpatialUnderstanding\Materials\SpatialUnderstandingSurface.shader" />
     <None Include="Assets\HoloToolkit\SpatialMapping\Shaders\SpatialMappingTap.shader" />
     <None Include="Assets\HoloToolkit\UX\Shaders\unlit_vert_color.shader" />
+    <None Include="Assets\MidiPlayer\Resources\SongDB\Hummm.txt" />
+    <None Include="Assets\MidiPlayer\Resources\SoundfontsDB\GeneralUser_GS_SoftSynth_v144\GeneralUser_GS_SoftSynth_v144.txt" />
     <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\VertexLitConfigurable.cginc" />
     <None Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Shaders\GLTFStandardInput.cginc" />
+    <None Include="Assets\MidiPlayer\Resources\SongDB\saxy.txt" />
     <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\FastConfigurable\FastConfigurable.cginc" />
     <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\FastConfigurable\FastConfigurable2Sided.shader" />
     <None Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Shaders\GLTFVertexLitCommon.cginc" />
+    <None Include="Assets\MidiPlayer\Resources\SongDB\Marimba.txt" />
+    <None Include="Assets\MidiPlayer\Resources\SongDB\BasicPiano.txt" />
     <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\UnlitNoDepthTest.shader" />
     <None Include="Assets\HoloToolkit\UX\Fonts\LICENSE.txt" />
     <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\UnlitConfigurableTransparent.shader" />
@@ -620,8 +700,10 @@
     <None Include="Assets\HoloToolkit\MRTKVersion.txt" />
     <None Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Shaders\GLTFStandard.shader" />
     <None Include="Assets\HoloToolkit\SpatialUnderstanding\Materials\SpatialMappingSurface.shader" />
+    <None Include="Assets\MidiPlayer\Resources\MidiSet.txt" />
     <None Include="Assets\HoloToolkit\UX\Shaders\Normal-Diffuse.shader" />
     <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\LambertianConfigurableTransparent.shader" />
+    <None Include="Assets\MidiPlayer\Scripts\NAudio License.txt" />
     <None Include="Assets\HoloToolkit\UX\Shaders\InvisibleShader.shader" />
     <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\FastConfigurable\FastConfigurable.shader" />
     <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\macro.cginc" />
@@ -636,6 +718,7 @@
     <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\BlinnPhongConfigurable.cginc" />
     <None Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Shaders\GLTFMobileCommon.cginc" />
     <None Include="Assets\HoloToolkit\UX\Shaders\Occlusion.shader" />
+    <None Include="Assets\MidiPlayer\Scripts\NAudio Midi\NAudio License.txt" />
     <None Include="Assets\HoloToolkit\UX\Shaders\MovieMask.shader" />
     <None Include="Assets\HoloToolkit\UX\Shaders\StereoImage.shader" />
     <None Include="Assets\HoloToolkit\License.txt" />
@@ -645,25 +728,25 @@
     <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\UnlitConfigurable.cginc" />
     <None Include="Assets\HoloToolkit\UX\Shaders\3DTextShader.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>E:/unity project/PianoHub/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>E:/unity project/Projet Hub/Projet Hub/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>E:/unity project/PianoHub/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>E:/unity project/Projet Hub/Projet Hub/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>E:/unity project/PianoHub/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>E:/unity project/Projet Hub/Projet Hub/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.WindowsMR.Editor">
-      <HintPath>E:/unity project/PianoHub/Library/ScriptAssemblies/Unity.XR.WindowsMR.Editor.dll</HintPath>
+      <HintPath>E:/unity project/Projet Hub/Projet Hub/Library/ScriptAssemblies/Unity.XR.WindowsMR.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>E:/unity project/PianoHub/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>E:/unity project/Projet Hub/Projet Hub/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>E:/unity project/PianoHub/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>E:/unity project/Projet Hub/Projet Hub/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.WindowsMR">
-      <HintPath>E:/unity project/PianoHub/Library/ScriptAssemblies/Unity.XR.WindowsMR.dll</HintPath>
+      <HintPath>E:/unity project/Projet Hub/Projet Hub/Library/ScriptAssemblies/Unity.XR.WindowsMR.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/MetroSupport/Tools/UnityEngine.AIModule.dll</HintPath>
@@ -864,25 +947,25 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="GLTFSerialization">
-      <HintPath>E:/unity project/PianoHub/Assets/HoloToolkit/Utilities/Scripts/GLTF/Plugins/GLTFSerialization/GLTFSerialization.dll</HintPath>
+      <HintPath>E:/unity project/Projet Hub/Projet Hub/Assets/HoloToolkit/Utilities/Scripts/GLTF/Plugins/GLTFSerialization/GLTFSerialization.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>E:/unity project/PianoHub/Assets/HoloToolkit/Utilities/Scripts/GLTF/Plugins/JsonNet/Newtonsoft.Json.dll</HintPath>
+      <HintPath>E:/unity project/Projet Hub/Projet Hub/Assets/HoloToolkit/Utilities/Scripts/GLTF/Plugins/JsonNet/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Advertisements">
-      <HintPath>E:/unity project/PianoHub/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.dll</HintPath>
+      <HintPath>E:/unity project/Projet Hub/Projet Hub/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Advertisements.Editor">
-      <HintPath>E:/unity project/PianoHub/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.Editor.dll</HintPath>
+      <HintPath>E:/unity project/Projet Hub/Projet Hub/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>E:/unity project/PianoHub/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>E:/unity project/Projet Hub/Projet Hub/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>E:/unity project/PianoHub/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>E:/unity project/Projet Hub/Projet Hub/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>E:/unity project/PianoHub/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>E:/unity project/Projet Hub/Projet Hub/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/mscorlib.dll</HintPath>
