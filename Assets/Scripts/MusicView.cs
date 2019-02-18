@@ -49,6 +49,7 @@ public class MusicView : MonoBehaviour
                 n.gameObject.SetActive(true);
                 n.midiFilePlayer = midiFilePlayer;
                 n.note = note;
+                //n.note.Duration = 2500f;
                 n.note.Midi = note.Midi;
                 n.gameObject.GetComponent<Renderer>().material = n.NewNote;
                 /*  MPTKNote mptkNote = new MPTKNote() { Delay = 0, Drum = false, Duration = 0.2f, Note = 60, Patch = 10, Velocity = 100 };
