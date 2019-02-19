@@ -727,7 +727,7 @@ namespace MidiPlayerTK
         public static void ErrorDetail(System.Exception ex)
         {
             Debug.LogWarning("MPTK Error " + ex.Message);
-            Debug.LogWarning("   " + ex.TargetSite ?? "");
+         //   Debug.LogWarning("   " + ex.TargetSite ?? "");
             var st = new System.Diagnostics.StackTrace(ex, true);
             if (st != null)
             {
