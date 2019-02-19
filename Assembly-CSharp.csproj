@@ -654,7 +654,7 @@
     <Compile Include="Assets\Scripts\Menu\ButtonMenuPlay.cs" />
     <Compile Include="Assets\Scripts\Menu\ButtonMenuQuit.cs" />
     <Compile Include="Assets\Scripts\MNote.cs" />
-    <Compile Include="Assets\Scripts\Music.cs" />
+    <Compile Include="Assets\Scripts\music.cs" />
     <Compile Include="Assets\Scripts\MusicLoader.cs" />
     <Compile Include="Assets\Scripts\MusicManager.cs" />
     <Compile Include="Assets\Scripts\MusicView.cs" />
