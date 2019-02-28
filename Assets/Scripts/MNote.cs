@@ -22,23 +22,23 @@ public class MNote : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
         //float translation = Time.deltaTime * 10;
         //transform.Translate(-translation, 0, 0);
         if (!played && transform.position.x < -45f)
         {
-            played = true;
+          //  played = true;
             /*int delta = Mathf.CeilToInt(zOriginal - transform.position.z + 0.5f);
             note.Midi += delta;*/
             //note.Midi = Midi;
-            print("Debug: " + note.Midi);
+    /*        print("Debug: " + note.Midi);
         }
-    }
+    }*/
 
     void FixedUpdate()
     {
-        float translation = Time.fixedDeltaTime * Speed;
+        float translation = Time.fixedDeltaTime * 2.5f;
         transform.Translate(0, 0, -translation);
     }
 

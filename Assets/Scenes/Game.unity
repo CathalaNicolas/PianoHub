@@ -143,7 +143,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   midiFilePlayer: {fileID: 1945536286}
   midiStreamPlayer: {fileID: 286083340}
-  NoteDisplay: {fileID: 1325731594}
+  NoteDisplay: {fileID: 1782456493798743794, guid: c86050dd026643b4ca5f2d39381a28e8,
+    type: 3}
   sliders: []
 --- !u!4 &53301884
 Transform:
@@ -228,97 +229,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a10fc17731b73e545b0078250340235c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &1325731593
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2758602027550254277, guid: c86050dd026643b4ca5f2d39381a28e8,
-        type: 3}
-      propertyPath: m_Name
-      value: PianoNote
-      objectReference: {fileID: 0}
-    - target: {fileID: 2758602027550254281, guid: c86050dd026643b4ca5f2d39381a28e8,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2758602027550254281, guid: c86050dd026643b4ca5f2d39381a28e8,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2758602027550254281, guid: c86050dd026643b4ca5f2d39381a28e8,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2758602027550254281, guid: c86050dd026643b4ca5f2d39381a28e8,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2758602027550254281, guid: c86050dd026643b4ca5f2d39381a28e8,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2758602027550254281, guid: c86050dd026643b4ca5f2d39381a28e8,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2758602027550254281, guid: c86050dd026643b4ca5f2d39381a28e8,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2758602027550254281, guid: c86050dd026643b4ca5f2d39381a28e8,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2758602027550254281, guid: c86050dd026643b4ca5f2d39381a28e8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2758602027550254281, guid: c86050dd026643b4ca5f2d39381a28e8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2758602027550254281, guid: c86050dd026643b4ca5f2d39381a28e8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1782456493798743794, guid: c86050dd026643b4ca5f2d39381a28e8,
-        type: 3}
-      propertyPath: midiFilePlayer
-      value: 
-      objectReference: {fileID: 1945536286}
-    - target: {fileID: 1782456493798743794, guid: c86050dd026643b4ca5f2d39381a28e8,
-        type: 3}
-      propertyPath: NewNote
-      value: 
-      objectReference: {fileID: 2100000, guid: f0ad7ee9a3dbc794a9c61e6b9fa76363, type: 2}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c86050dd026643b4ca5f2d39381a28e8, type: 3}
---- !u!114 &1325731594 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1782456493798743794, guid: c86050dd026643b4ca5f2d39381a28e8,
-    type: 3}
-  m_PrefabInstance: {fileID: 1325731593}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98a4a2c75cd83ff4ebc20f85d49f5974, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1727958075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -360,7 +270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011792100794, guid: a611e772ef8ddf64d8106a9cbb70f31c, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000011792100794, guid: a611e772ef8ddf64d8106a9cbb70f31c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

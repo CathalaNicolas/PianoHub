@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class ButtonStart : MonoBehaviour
 {
     public GameManager gameManager = null;
+    bool alreadyClick = false;
     public GameObject Piano;
     public GameObject Button;
 
@@ -23,11 +24,16 @@ public class ButtonStart : MonoBehaviour
 
     public void StartGame()
     {
-        gameManager.initSliders();
-        SceneManager.LoadScene("Menu");
+        if (alreadyClick == false)
+        {
+            alreadyClick = true;
+            gameManager.initSliders();
+            print("Sliders initialised!");
+            SceneManager.LoadScene("Menu");
+        }
     }
 
-    void Update()
+    public void Update()
     {
         Button.transform.position = new Vector3(Piano.transform.position.x, Piano.transform.position.y + 0.2f, Piano.transform.position.z);
     }

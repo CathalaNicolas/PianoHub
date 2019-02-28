@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using HoloToolkit.Unity.UX;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -71,6 +72,7 @@ public class GameManager : MonoBehaviour
                 {
                     test = true;
                     DontDestroyOnLoad(Piano);
+                    DontDestroyOnLoad(Piano.GetComponent<BoundingBox>());
                 }
             }
         }

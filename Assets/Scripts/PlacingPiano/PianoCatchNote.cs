@@ -8,7 +8,6 @@ public class PianoCatchNote : MonoBehaviour
     {
         if (collision.gameObject.tag == "Note")
         {
-            print("Collision note!");
             Destroy(collision.gameObject);
         }
     }

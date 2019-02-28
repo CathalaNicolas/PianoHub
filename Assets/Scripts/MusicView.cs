@@ -44,12 +44,15 @@ public class MusicView : MonoBehaviour
             {
                 Vector3 position = new Vector3(sliders[(note.Midi - 20)].transform.position.x,
                     sliders[(note.Midi - 20)].transform.position.y,
-                    sliders[(note.Midi - 20)].transform.position.z + (sliders[(note.Midi - 20)].transform.localScale.z / 2));
+                    sliders[(note.Midi - 20)].transform.position.z + (sliders[(note.Midi - 20)].transform.localScale.z / 2) + (0.04f + (note.Length / 10000F)));
                 MNote n = Instantiate<MNote>(NoteDisplay, position, Quaternion.identity);
+
+                n.gameObject.transform.localScale += new Vector3(0, 0, (note.Length / 10000f));
+                //((float)note.Duration / 10000f));
+                                                                                               // print("DEBUG: Duration " + (note.Length / 10000f));
                 n.gameObject.SetActive(true);
                 n.midiFilePlayer = midiFilePlayer;
                 n.note = note;
-                //n.note.Duration = 2500f;
                 n.note.Midi = note.Midi;
                 n.gameObject.GetComponent<Renderer>().material = n.NewNote;
                 /*  MPTKNote mptkNote = new MPTKNote() { Delay = 0, Drum = false, Duration = 0.2f, Note = 60, Patch = 10, Velocity = 100 };
