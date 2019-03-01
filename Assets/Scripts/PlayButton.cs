@@ -5,13 +5,11 @@ public class PlayButton : MonoBehaviour
 {
     public void OnClickPlay()
     {
-        SceneManager.LoadScene("Game");
-        print("Ici");
+        SceneManager.LoadScene("PlayMenu");
     }
 
     public void OnClickQuit()
     {
         Application.Quit();
-        print("LA");
     }
 }
