@@ -23,7 +23,8 @@ public class ButtonStart : MonoBehaviour
         if (alreadyClick == false)
         {
             alreadyClick = true;
-            gameManager.initSliders();
+            
+            gameManager.testDelete();
             print("Sliders initialised!");
             SceneManager.LoadScene("Menu");
         }

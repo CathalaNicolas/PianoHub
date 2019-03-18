@@ -5,10 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class ButtonMenuPlay : MonoBehaviour
 {
-    public MusicManager manager = null;
+    public GameManager gameManager = null;
+
+    public void Start()
+    {
+        gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
+        if (gameManager == null)
+        {
+            print("GameManager can't be found.");
+            return;
+        }
+    }
 
     public void Play()
-    { 
+    {
+        gameManager.initMusic();
+        gameManager.initGame();
        SceneManager.LoadScene("Game");
     }
 }

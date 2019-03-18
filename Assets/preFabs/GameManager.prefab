@@ -43,10 +43,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8598e274145a32347a26c80f244fa6ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loader: {fileID: 2889410180326095447, guid: ae63264e101113942a6ff76c54689729, type: 3}
-  musicManager: {fileID: 988143606651009658, guid: cf21a69e496faa640ba4c2a2e37dc024,
+  preFabMusic: {fileID: 7239095678042683425, guid: 97830a524dc44c542a1bb0e03066de27,
     type: 3}
-  preFabSlider: {fileID: 0}
-  Piano: {fileID: 0}
-  collisionBar: {fileID: 0}
-  sliders: []
+  preFabKeyManager: {fileID: 8566334002195979143, guid: 13da90bfd9653c743b112b5cf51f09cd,
+    type: 3}
+  preFabServer: {fileID: 830263664466729511, guid: 2e97caf4642e8c643ae3341f28856b0b,
+    type: 3}
+  preFabSlider: {fileID: 6376632809400004948, guid: a6a6fd4578c74274db913318ae84cc9f,
+    type: 3}
+  preFabCollisionBar: {fileID: 4155593719497129968, guid: 0131f3a4fb1d76644b8cd5a7838a4566,
+    type: 3}
+  preFabScore: {fileID: 947564677340229119, guid: 247df3781487a39448d9b8a21924493e,
+    type: 3}
+  preFabPiano: {fileID: 1687438309148012875, guid: 0e67e0bb471b6f440b11f3598683b4a8,
+    type: 3}
+  preFabCombo: {fileID: 761283253271926170, guid: eb1db16f20bf0c544be1205e16796849,
+    type: 3}
+  server: {fileID: 0}
+  music: {fileID: 0}
+  keyManager: {fileID: 0}
+  score: {fileID: 0}
+  combo: {fileID: 0}
+  gamePaused: 0

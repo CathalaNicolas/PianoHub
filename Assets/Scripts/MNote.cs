@@ -5,41 +5,55 @@ using UnityEngine;
 
 public class MNote : MonoBehaviour
 {
-    public static float Speed = 1f;
-
     public MidiNote note;
     public MidiFilePlayer midiFilePlayer;
     public bool played = false;
+    public bool startHit = false;
+    public bool stayHit = false;
     public Material NewNote;
     public Material WaitingNote;
     public Material ReadyNote;
-    
-    
-    // Use this for initialization
-    void Start()
-    {
+    public int[] altNote = {1, 4, 6, 9, 11, 13, 16,  18, 21, 23, 25, 28, 30, 33,
+                            35, 37, 40, 42, 45, 47, 49, 52, 54, 57, 59, 61, 64, 66,
+                            69, 71, 73, 76, 78, 81, 83, 85};
 
+
+    public bool isNoteAlt(int midiValue)
+    {
+        foreach (int value in altNote)
+        {
+            if (midiValue == value)
+                return true;
+        }
+        return false;
     }
 
-    // Update is called once per frame
-    /*void Update()
+    private void Start()
     {
-        //float translation = Time.deltaTime * 10;
-        //transform.Translate(-translation, 0, 0);
-        if (!played && transform.position.x < -45f)
-        {
-          //  played = true;
-            /*int delta = Mathf.CeilToInt(zOriginal - transform.position.z + 0.5f);
-            note.Midi += delta;*/
-            //note.Midi = Midi;
-    /*        print("Debug: " + note.Midi);
-        }
-    }*/
+        Renderer renderer = this.GetComponent<Renderer>();
 
+
+        if (!renderer.material)
+            Debug.LogError("material is null");
+        if (isNoteAlt(note.Midi - 20))
+        {
+            Debug.Log("Note color cyan");
+            //renderer.material = Resources.Load<Material>("/preFabs/materialAltNote");
+            renderer.material.SetColor("_Color", Color.cyan);
+            // renderer.material = materialAltNote;
+        }
+        else
+        {
+            Debug.Log("Note color blue");
+            //renderer.material = Resources.Load<Material>("/preFabs/materialNormalNote");
+            renderer.material.SetColor("_Color", Color.blue);
+        }
+
+    }
     void FixedUpdate()
     {
-        float translation = Time.fixedDeltaTime * 2.5f;
-        transform.Translate(0, 0, -translation);
+        float translation = Time.fixedDeltaTime * 1f;
+        this.transform.Translate(Vector3.forward * -translation, this.transform.parent);
     }
 
 }

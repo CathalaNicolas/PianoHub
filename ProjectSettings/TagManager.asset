@@ -11,6 +11,9 @@ TagManager:
   - Piano
   - Note
   - GameManager
+  - MusicTimer
+  - ScoreManager
+  - ComboManager
   layers:
   - Default
   - TransparentFX
