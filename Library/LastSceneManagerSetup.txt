@@ -2,6 +2,24 @@ sceneSetups:
 - path: Assets/Scenes/Game.unity
   isLoaded: 0
   isActive: 0
+- path: Assets/Scenes/InGameMenu.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/Scenes/Lesson3.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/Scenes/Lesson2.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/Lesson1.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/Scenes/LearningModeMenu.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/Scenes/PlayMenu.unity
+  isLoaded: 0
+  isActive: 0
 - path: Assets/Scenes/Menu.unity
   isLoaded: 0
   isActive: 0

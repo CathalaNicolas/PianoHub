@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7581586100819152748}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,9 +59,12 @@ MonoBehaviour:
     type: 3}
   preFabCombo: {fileID: 761283253271926170, guid: eb1db16f20bf0c544be1205e16796849,
     type: 3}
+  preFabTimer: {fileID: 9138507576331491375, guid: 5b46982315a61d74fabb561139e4c881,
+    type: 3}
   server: {fileID: 0}
   music: {fileID: 0}
   keyManager: {fileID: 0}
+  musicTimer: {fileID: 0}
   score: {fileID: 0}
   combo: {fileID: 0}
   gamePaused: 0

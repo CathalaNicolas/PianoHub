@@ -10,8 +10,10 @@ public class MusicTimer : MonoBehaviour
     public float actualDuration = 0;
     public Image circle;
     // Start is called before the first frame update
+
     void Start()
     {
+        Debug.Log("Starting music");
         musicView = GameObject.FindWithTag("Music").GetComponent<MusicView>();
         if (musicView == null)
         {

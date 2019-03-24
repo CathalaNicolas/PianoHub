@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 2758602027550254277}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
+  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -59,10 +59,10 @@ MonoBehaviour:
   played: 0
   startHit: 0
   stayHit: 0
-  endRelease: 0
   NewNote: {fileID: 0}
   WaitingNote: {fileID: 0}
   ReadyNote: {fileID: 0}
+  altNote: 010000000400000006000000090000000b0000000d00000010000000120000001500000017000000190000001c0000001e000000210000002300000025000000280000002a0000002d0000002f000000310000003400000036000000390000003b0000003d00000040000000420000004500000047000000490000004c0000004e000000510000005300000055000000
 --- !u!65 &2758602027550254276
 BoxCollider:
   m_ObjectHideFlags: 0

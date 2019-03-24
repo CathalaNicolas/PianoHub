@@ -13,7 +13,7 @@ public class MusicView : MonoBehaviour
 
     public Material materialAltNote;
     public Material materialNormalNote;
-    public MidiFilePlayer midiFilePlayer;
+   public MidiFilePlayer midiFilePlayer;
     public MidiStreamPlayer midiStreamPlayer;
     public MNote NoteDisplay;
     public GameObject[] sliders = null;
@@ -41,6 +41,7 @@ public class MusicView : MonoBehaviour
             midiFilePlayer.OnEventNotesMidi = new MidiFilePlayer.ListNotesEvent();
             midiFilePlayer.OnEventNotesMidi.AddListener(NotesToPlay);
         }
+        midiFilePlayer.MPTK_MidiName = "auclair_pno";
         playMusic();
     }
     
@@ -82,14 +83,11 @@ public class MusicView : MonoBehaviour
 
                 //Trick because if your parent object is non-uniformly scaled (cf: the slider isn't), 
                 //there is no reliable way to avoid that child objects get scaled or skewed.
-                n.transform.localScale = new Vector3(1.5F, 150F, 0.0125F * ((float)note.Duration / 100F));
+//                n.transform.localScale = new Vector3(1.5F, 150F, 0.0125F * ((float)note.Duration / 100F));
 
                 n.transform.rotation = slider.transform.rotation;
-                n.transform.position = new Vector3(slider.transform.position.x - ((n.transform.localScale.x / 2) * n.transform.parent.localScale.x), slider.transform.position.y,
-                    slider.transform.position.z + (slider.transform.localScale.z / 2F) + n.transform.localScale.z);
-                
-                
-               // n.transform.Translate(Vector3.forward * (sliders[(note.Midi - 20)].transform.localScale.z / 2), n.transform.parent);
+                n.transform.position = new Vector3(slider.transform.position.x, slider.transform.position.y,
+                    slider.transform.position.z + (slider.transform.localScale.z / 2F) + (n.transform.localScale.z / 2));
 
 
                 n.gameObject.SetActive(true);

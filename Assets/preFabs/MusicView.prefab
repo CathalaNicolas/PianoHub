@@ -47,8 +47,8 @@ MonoBehaviour:
     type: 3}
   preFabMSP: {fileID: 114320350483668748, guid: f1aa4788763f8854c9826e449686c328,
     type: 3}
-  materialAltNote: {fileID: 2100000, guid: 887b1ee589217464cb1bb28dc15b8373, type: 2}
-  materialNormalNote: {fileID: 2100000, guid: bae71d3df52c4fd48899647c3c10db68, type: 2}
+  materialAltNote: {fileID: 2100000, guid: bae71d3df52c4fd48899647c3c10db68, type: 2}
+  materialNormalNote: {fileID: 2100000, guid: 887b1ee589217464cb1bb28dc15b8373, type: 2}
   midiFilePlayer: {fileID: 0}
   midiStreamPlayer: {fileID: 0}
   NoteDisplay: {fileID: 1782456493798743794, guid: c86050dd026643b4ca5f2d39381a28e8,

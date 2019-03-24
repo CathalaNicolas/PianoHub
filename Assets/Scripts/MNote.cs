@@ -37,14 +37,13 @@ public class MNote : MonoBehaviour
             Debug.LogError("material is null");
         if (isNoteAlt(note.Midi - 20))
         {
-            Debug.Log("Note color cyan");
             //renderer.material = Resources.Load<Material>("/preFabs/materialAltNote");
             renderer.material.SetColor("_Color", Color.cyan);
             // renderer.material = materialAltNote;
         }
         else
         {
-            Debug.Log("Note color blue");
+
             //renderer.material = Resources.Load<Material>("/preFabs/materialNormalNote");
             renderer.material.SetColor("_Color", Color.blue);
         }

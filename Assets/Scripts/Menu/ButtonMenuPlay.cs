@@ -19,8 +19,6 @@ public class ButtonMenuPlay : MonoBehaviour
 
     public void Play()
     {
-        gameManager.initMusic();
-        gameManager.initGame();
-       SceneManager.LoadScene("Game");
+       SceneManager.LoadScene("PlayMenu");
     }
 }

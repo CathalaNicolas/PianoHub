@@ -15,10 +15,12 @@ public class GameManager : MonoBehaviour
     public ScoreManager       preFabScore;
     public GameObject       preFabPiano;
     public ComboManager      preFabCombo;
+    public MusicTimer       preFabTimer;
 
     public TCPTestServer server;
     public MusicView     music;
     public KeyManager keyManager;
+    public MusicTimer musicTimer;
 
     private GameObject collisionBar = null;
     private GameObject pianoIG = null;
@@ -115,6 +117,7 @@ public class GameManager : MonoBehaviour
     {
         initScore();
         initCombo();
+        initTimer();
     }
 
     public void initKeyManager()
@@ -125,11 +128,20 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(keyManager);
     }
 
+    public void initTimer()
+    {
+        musicTimer = Instantiate(preFabTimer);
+        if (!musicTimer)
+            Debug.Log("No music timer created.");
+        DontDestroyOnLoad(musicTimer);
+    }
+
     public void initServer()
     {
-        server = Instantiate(preFabServer);
+      server = Instantiate(preFabServer);
         if (!server)
             Debug.Log("Serveur can't be created.");
+        server.Connect("127.0.0.1", "10080");
         DontDestroyOnLoad(server);
     }
 
@@ -144,12 +156,25 @@ public class GameManager : MonoBehaviour
     public void testDelete()
     {
         Destroy(pianoIG.GetComponent<BoundingBox>());
-        //Destroy(pianoIG.GetComponent<HandDraggable>());
+        Destroy(pianoIG.GetComponent<BoxCollider>());
+        Destroy(pianoIG.GetComponent<MeshRenderer>());
     }
     
     // Update is called once per frame
     void Update()
     {
+        
+        List<int> active =  keyManager.getActiveKey();
+
+        for (int i = 0; i < active.Count; i++)
+        {
+            Vector3 tmp;
+
+            tmp = sliders[active[i]].transform.localScale;
+            sliders[active[i]].transform.localScale += new Vector3(0.2F, 0.2F, 0);
+            for (int y = 0; y < 20000; y++) ;
+            sliders[active[i]].transform.localScale = tmp;
+        }
 
     }
 }
