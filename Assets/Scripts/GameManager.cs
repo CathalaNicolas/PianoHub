@@ -166,6 +166,11 @@ public class GameManager : MonoBehaviour
         
         List<int> active =  keyManager.getActiveKey();
 
+
+        Renderer rend = sliders[25].GetComponent<Renderer>();
+        if (Input.GetKeyDown("space"))
+            rend.material.SetColor("_Color", Color.green);
+
         for (int i = 0; i < active.Count; i++)
         {
             Vector3 tmp;

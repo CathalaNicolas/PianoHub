@@ -119,8 +119,22 @@ public class TCPTestServer : MonoBehaviour
 #endif
 
 #if UNITY_EDITOR
+
+        // <summary> 	
+        // TCPListener to listen for incomming TCP connection 	
+        // requests.
+        // </summary> 	
+        private TcpListener tcpListener;
+        // <summary> 
+        // Background thread for TcpServer workload.
+        // </summary> 	
+        private Thread tcpListenerThread;
+        // <summary> 	
+        // Create handle to connected tcp client.
+        // </summary> 	
+        private TcpClient connectedTcpClient;
+
     private bool _useUWP = false;
-    System.Net.Sockets.TcpClient client;
     System.Net.Sockets.NetworkStream stream;
     private Thread exchangeThread;
 #endif
@@ -145,7 +159,7 @@ public class TCPTestServer : MonoBehaviour
         }
         else
         {
-            ConnectUnity(host, port);
+            CreateServeur();
         }
     }
 
@@ -185,7 +199,7 @@ public class TCPTestServer : MonoBehaviour
 #endif
     }
 
-    private void ConnectUnity(string host, string port)
+    private void ConnectUnity()
     {
 #if !UNITY_EDITOR
         errorStatus = "Unity TCP client used in UWP!";
@@ -194,10 +208,37 @@ public class TCPTestServer : MonoBehaviour
         {
             if (exchangeThread != null) StopExchange();
 
-            client = new System.Net.Sockets.TcpClient(host, Int32.Parse(port));
-            stream = client.GetStream();
-            reader = new StreamReader(stream);
-            writer = new StreamWriter(stream) { AutoFlush = true };
+            tcpListener = new System.Net.Sockets.TcpListener(System.Net.IPAddress.Parse("127.0.0.1"), 5050);
+            tcpListener.Start();
+            Debug.Log("Server is listening");
+            Byte[] bytes = new Byte[1024];
+            TcpClient connectedTcpClient;
+            while (true)
+            {
+                Debug.Log("Before client connection");
+                using (connectedTcpClient = tcpListener.AcceptTcpClient())
+                {
+
+                    Debug.Log("Accepted client");
+// Get a stream object for reading
+                    using (NetworkStream stream = connectedTcpClient.GetStream())
+                        {
+                            Debug.Log("incomming request ?");
+                            int length;
+                          //  Read incomming stream into byte arrary. 						
+                                    while ((length = stream.Read(bytes, 0, bytes.Length)) != 0)
+                            {
+                                Debug.Log("reading request");
+                                var incommingData = new byte[length];
+                                Array.Copy(bytes, 0, incommingData, 0, length);
+                               // Convert byte array to string message. 							
+                                        string clientMessage = Encoding.ASCII.GetString(incommingData);
+                                Debug.Log("Received message: " + clientMessage);
+                                gameManager.keyManager.parseMessage(clientMessage);
+                            }
+                        }
+                }
+            }
 
             RestartExchange();
             successStatus = "Connected!";
@@ -209,7 +250,14 @@ public class TCPTestServer : MonoBehaviour
         }
 #endif
     }
-
+    void CreateServeur()
+    {
+        Debug.Log("New server");
+       // Start TcpServer background thread
+            tcpListenerThread = new Thread(new ThreadStart(ConnectUnity));
+        tcpListenerThread.IsBackground = true;
+        tcpListenerThread.Start();
+    }
     private bool exchanging = false;
     private bool exchangeStopRequested = false;
     private string lastPacket = null;
@@ -252,14 +300,14 @@ public class TCPTestServer : MonoBehaviour
             string received = null;
 
 #if UNITY_EDITOR
-            byte[] bytes = new byte[client.SendBufferSize];
+            /*byte[] bytes = new byte[client.SendBufferSize];
             int recv = 0;
             while (true)
             {
                 recv = stream.Read(bytes, 0, client.SendBufferSize);
                 received += Encoding.UTF8.GetString(bytes, 0, recv);
                 if (received.EndsWith("\n")) break;
-            }
+            }*/
 #else
             received = reader.ReadLine();
 #endif
@@ -292,7 +340,7 @@ public class TCPTestServer : MonoBehaviour
         {
             exchangeThread.Abort();
             stream.Close();
-            client.Close();
+         //   client.Close();
             writer.Close();
             reader.Close();
 
